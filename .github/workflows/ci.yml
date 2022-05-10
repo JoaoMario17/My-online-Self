@@ -11,6 +11,11 @@ on:
 
 jobs:
   build:
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
     name: Build
     runs-on: ubuntu-latest
     steps:
@@ -24,13 +29,6 @@ jobs:
         port: ${{ secrets.REMOTE_PORT }}
         source: "src/"
         target: ${{ secrets.REMOTE_TARGET }}
-
-    strategy:
-      matrix:
-        node-version: [12.x, 14.x, 16.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
-    steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
