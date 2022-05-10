@@ -25,8 +25,6 @@ jobs:
         source: "src/"
         target: ${{ secrets.REMOTE_TARGET }}
 
-    runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [12.x, 14.x, 16.x]
