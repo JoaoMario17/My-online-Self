@@ -4,6 +4,7 @@
 <template>
   <div>
     <h1>O projeto está em construção</h1>
+    <p>Atualizações serão adicionadas em breve</p>
   </div>
 </template>
 
